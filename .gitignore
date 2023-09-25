@@ -1,0 +1,8 @@
+# Python bytecode cache files
+__pycache__/
+
+# Drafts
+draft.txt
+
+# Virtual environment
+venv/
