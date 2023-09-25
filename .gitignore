@@ -6,3 +6,7 @@ draft.txt
 
 # Virtual environment
 venv/
+
+# Vim
+Session.vim
+*.swp
