@@ -14,13 +14,11 @@ def get_im(src):
     """
     try:
         if os.path.isdir(src):  # Folder
-            if not os.listdir(src):  # Is empty
+            if not os.listdir(src):  # Empty
                 return None
             images = [Path(src, f) for f in os.listdir(src)]
-        #else:  # Image(s)
-        #    images = src
     except TypeError:
-        images = src  # Image(s)
+        images = src  # Iterable
 
     im_list = []  # Image objects
     
