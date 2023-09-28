@@ -3,14 +3,19 @@
 import os
 from PIL import Image
 from pathlib import Path
+from typing import Iterable
 
 Image.MAX_IMAGE_PIXELS = None
 
-def get_im(src):
+def _get_im(src: Iterable[str] | str) -> list[Image]:
     """
-    Return a list of Image objects from
-    - Path to folder containing images
-    - List of images
+    Helper function of convert_to_pdf
+
+    Args:
+        src (Iterable[str] | str): List of images or path to folder
+
+    Returns:
+        List of PIL.Image objects
     """
     try:
         if os.path.isdir(src):  # Folder
@@ -28,14 +33,29 @@ def get_im(src):
 
     return im_list
 
-def convert_to_pdf(src, dest):
+def convert_to_pdf(src: Iterable[str] | str, dest: str) -> None:
     """
     Convert image(s) to a single PDF.
     
-    src: List of images / Folder
-    dest: Output PDF path
+    Args:
+        src (Iterable[str] | str): List of images / Folder
+        dest (str): Output PDF path
+
+    Returns:
+        This function has no return value.
+
+    Raises:
+        FileNotFoundError if the source file does not exist or folder is empty
+
+    Example:
+        convert_to_pdf(["image.png"], "output.pdf")
+        convert_to_pdf(["im-1.png", "im-2.png", "im-3.png"], "output.pdf")
+        convert_to_pdf("img_folder", "output.pdf")
     """
-    im_list = get_im(src)
+    im_list = _get_im(src)
+
+    if not im_list:
+        raise FileNotFoundError("No image was provided")
 
     if not dest.endswith(".pdf"):
         dest += ".pdf"
@@ -50,19 +70,3 @@ def convert_to_pdf(src, dest):
         im.close()
     cover.close()
 
-
-if __name__ == "__main__":
-    # Test case: List of images
-    src = ["venv/tests/page-1.png", "venv/tests/page-2.png", "venv/tests/page-3.png"]
-    dest = "venv/tests/results/images.pdf"
-    convert_to_pdf(src, dest)
-
-    # Test case: Single image
-    src = ["venv/tests/page-2.png"]
-    dest = "venv/tests/results/image.pdf"
-    convert_to_pdf(src, dest)
-
-    # Test case: Folder
-    src = "venv/tests/images"
-    dest = "venv/tests/results/folder.pdf"
-    convert_to_pdf(src, dest)
