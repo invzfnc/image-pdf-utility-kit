@@ -17,6 +17,7 @@ def _get_im(src: Iterable[str] | str) -> list[Image]:
     Returns:
         List of PIL.Image objects
     """
+
     try:
         if os.path.isdir(src):  # Folder
             if not os.listdir(src):  # Empty
@@ -42,7 +43,7 @@ def convert_to_pdf(src: Iterable[str] | str, dest: str) -> None:
         dest (str): Output PDF path
 
     Returns:
-        This function has no return value.
+        This function has no return value
 
     Raises:
         FileNotFoundError if the source file does not exist or folder is empty
@@ -52,6 +53,7 @@ def convert_to_pdf(src: Iterable[str] | str, dest: str) -> None:
         convert_to_pdf(["im-1.png", "im-2.png", "im-3.png"], "output.pdf")
         convert_to_pdf("img_folder", "output.pdf")
     """
+
     im_list = _get_im(src)
 
     if not im_list:
