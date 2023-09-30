@@ -3,13 +3,14 @@
 import fitz
 from pathlib import Path
 
-def convert_to_image(src: str, dest: str, ext: str="png", dpi: int=300) -> None:
+def convert_to_image(src: str, dest: str, ext: str="png", 
+                     dpi: int=300) -> None:
     """
     Convert PDF to image(s).
 
     Args:
-        src: PDF filepath
-        dest: Folder to place extracted images
+        src (str): PDF filepath
+        dest (str): Folder to place extracted images
 
     Returns:
         This function has no return value
