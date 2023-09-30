@@ -50,3 +50,6 @@ change_pixels("input.jpg", "foreground.png",
 ![Changing foreground color](https://raw.githubusercontent.com/eve-1010/image-pdf-utility-kit/main/docs/foreground.png)
 
 To remove background, pass `(r, g, b, 0)` to `replacement_color` (`0` for alpha channel equals transparency)
+
+## Dependencies
+See [requirements.txt](requirements.txt)
