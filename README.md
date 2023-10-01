@@ -28,6 +28,7 @@ convert_to_image("Book.pdf", "Extracted")
 The `change_pixels` function modifies pixels in an image based on specific conditions.
 
 ```python
+# Changes color of background
 from change_pixels import change_pixels
 
 change_pixels("input.jpg", "foreground.png",
@@ -38,6 +39,7 @@ change_pixels("input.jpg", "foreground.png",
 ![Changing background color](https://raw.githubusercontent.com/eve-1010/image-pdf-utility-kit/main/docs/background.png)
 
 ```python
+# Changes color of font/foreground
 from operator import le
 from change_pixels import change_pixels
 
