@@ -1,7 +1,7 @@
 # convert_to_pdf.py - Convert list of images to PDF
 
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 from pathlib import Path
 from typing import Iterable
 
@@ -30,6 +30,7 @@ def _get_im(src: Iterable[str] | str) -> list[Image]:
     
     for image in images:
         im = Image.open(image)
+        im = ImageOps.exif_transpose(im)
         im_list.append(im.convert("RGB"))
 
     return im_list
