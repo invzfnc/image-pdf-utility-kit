@@ -55,3 +55,6 @@ To remove background, pass `(r, g, b, 0)` to `replacement_color` (`0` for alpha 
 
 ## Dependencies
 See [requirements.txt](requirements.txt)
+
+## License
+This software is licensed under the [MIT License](https://github.com/eve-1010/image-pdf-utility-kit/blob/main/LICENSE) © [Cha](https://github.com/eve-1010)
