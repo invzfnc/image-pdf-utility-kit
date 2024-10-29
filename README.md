@@ -36,7 +36,7 @@ change_pixels("input.jpg", "foreground.png",
               replacement_color=(250, 235, 215, 255))
 ```
 
-![Changing background color](https://raw.githubusercontent.com/eve-1010/image-pdf-utility-kit/main/docs/background.png)
+![Changing background color](https://raw.githubusercontent.com/invzfnc/image-pdf-utility-kit/main/docs/background.png)
 
 ```python
 # Changes color of font/foreground
@@ -49,7 +49,7 @@ change_pixels("input.jpg", "foreground.png",
 			  compare_func=le)
 ```
 
-![Changing foreground color](https://raw.githubusercontent.com/eve-1010/image-pdf-utility-kit/main/docs/foreground.png)
+![Changing foreground color](https://raw.githubusercontent.com/invzfnc/image-pdf-utility-kit/main/docs/foreground.png)
 
 To remove background, pass `(r, g, b, 0)` to `replacement_color` (`0` for alpha channel equals transparency)
 
